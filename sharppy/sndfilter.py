@@ -196,15 +196,17 @@ def _findInversions(temp, dewp, pres, trop_idx):
 
     inversion_layers = []
     for layer in groupedLayers:
-        lbot = layer[0]
-        ltop = layer[-1]
-        if pres[lbot] < 300 or lbot > trop_idx:
-            break
-        elif (temp[ltop] - temp[lbot] >= 2.5) or \
-             (np.abs(rh[ltop] - rh[lbot]) > 20) or \
-             (pres[lbot] - pres[ltop] >= 20):
-            inversion_layers.append(lbot)
-            inversion_layers.append(ltop)
+
+	lbot = layer[0]
+	ltop = layer[-1]
+
+	if pres[lbot] < 300 or lbot > trop_idx:
+		break
+	elif (temp[ltop] - temp[lbot] >= 2.5) or \
+		(np.abs(rh[ltop] - rh[lbot]) > 20) or \
+		(pres[lbot] - pres[ltop] >= 20):
+		inversion_layers.append(lbot)
+		inversion_layers.append(ltop)
     return np.asarray(inversion_layers, dtype=int)
 
 def _findIsothermals(temp, pres, tol=0.5):

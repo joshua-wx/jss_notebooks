@@ -42,8 +42,8 @@ def parseSPC(spc_file):
     #p, h, T, Td, wdir, wspd = np.genfromtxt( sound_data, delimiter=',', comments="%", unpack=True )
 
     ## filter sounding
-    dict_out = sndfilter.soundingFilter(temp,dewp,pres,wspd,wdir)
-    print dict_out
+    #dict_out = sndfilter.soundingFilter(temp,dewp,pres,wspd,wdir)
+    #print dict_out
     raw_input()
     return p, h, T, Td, wdir, wspd
 
