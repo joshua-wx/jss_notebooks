@@ -1,0 +1,7 @@
+pyart/tmp/
+pyart/ipybn_checkpoints/
+sharppy/tmp/
+sharppy/OLD/
+sharppy/ipybn_checkpoints/
+*~
+
